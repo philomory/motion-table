@@ -4,8 +4,8 @@ module MotionTable
     
     def tableView
       @tableView ||= UITableView.alloc.initWithFrame(self.view.frame, style:UITableViewStyleGrouped)
-      @tableView.dataSource = self;
-      @tableView.delegate = self;
+      @tableView.dataSource = self
+      @tableView.delegate = self
       return @tableView
     end
   end

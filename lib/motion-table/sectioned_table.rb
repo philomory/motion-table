@@ -18,8 +18,11 @@ module MotionTable
     end
 
     def numberOfSectionsInTableView(tableView)
-      return @mt_table_view_groups.length if @mt_table_view_groups
-      0
+      if self.table_data.respond_to?(:length)
+        table_data.length
+      else
+        0
+      end
     end
 
     # Number of cells
@@ -72,7 +75,7 @@ module MotionTable
       return tableCell
     end
     def sectionAtIndex(index)
-      @mt_table_view_groups.at(index)
+      table_data.at(index)
     end
 
     def cellAtSectionAndIndex(section, index)
